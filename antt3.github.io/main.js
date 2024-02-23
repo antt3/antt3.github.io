@@ -23,9 +23,9 @@ camera.position.setX(-3);
 // Renders everything in the scene
 renderer.render( scene, camera );
 
-// Creates an object
-const geometry = new THREE.TorusKnotGeometry( 10, 3, 100, 16, 3, 4 );
-const material = new THREE.MeshStandardMaterial({ color: 0xFF6347 });
+// Creates a torus knot object
+const torusKnotGeometry = new THREE.TorusKnotGeometry( 10, 3, 100, 16, 3, 4 );
+const torusKnotMaterial = new THREE.MeshStandardMaterial({ color: 0xFF6347 });
 const torusKnot = new THREE.Mesh( geometry, material );
 
 // Adds the new object to the scene
@@ -40,11 +40,30 @@ scene.add(pointLight, ambientLight)
 
 // Helper functions for debugging
 const lightHelper = new THREE.PointLightHelper(pointLight);
-const gridHelper = new THREE.GridHelper(200, 50);
+const gridHelper = new THREE.GridHelper( 200, 50 );
 scene.add(lightHelper, gridHelper);
 
 // Controls the camera using the mouse
 const controls = new OrbitControls(camera, renderer.domElement);
+
+// Creates a star object
+const starGeometry = new THREE.SphereGeometry( 0.25, 24, 24 );
+const starMaterial = new THREE.MeshStandardMaterial({ color: 0xffffff });
+const star = new THREE.Mesh( geometry, material );
+
+// Helper function to create a random star position
+addStar = () => {
+  const [x, y, z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(100));
+
+  star.position.set(x, y, z);
+  scene.add(star);
+}
+
+// Creates 200 randomly positioned stars
+Array(200).fill().forEach(addStar)
+
+// Adds the new object to the scene
+scene.add(star);
 
 // Helper function to rerender the scene for animations
 animate = () => {
