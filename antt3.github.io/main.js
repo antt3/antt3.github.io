@@ -2,6 +2,8 @@ import './style.css'
 
 import * as THREE from 'three';
 
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+
 // The scene contains all objects, cameras, & lights
 const scene = new THREE.Scene();
 
@@ -36,6 +38,14 @@ pointLight.position.set( 5, 5, 5 );
 const ambientLight = new THREE.AmbientLight(0xffffff);
 scene.add(pointLight, ambientLight)
 
+// Helper functions for debugging
+const lightHelper = new THREE.PointLightHelper(pointLight);
+const gridHelper = new THREE.GridHelper(200, 50);
+scene.add(lightHelper, gridHelper);
+
+// Controls the camera using the mouse
+const controls = new OrbitControls(camera, renderer.domElement);
+
 // Helper function to rerender the scene for animations
 animate = () => {
   requestAnimationFrame( animate );
@@ -43,6 +53,8 @@ animate = () => {
   torusKnot.rotation.x += 0.01;
   torusKnot.rotation.y += 0.005;
   torusKnot.rotation.z += 0.01;
+
+  controls.update();
 
   rerender.render( scene, camera );
 }
