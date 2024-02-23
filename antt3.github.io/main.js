@@ -16,21 +16,34 @@ const renderer = new THREE.WebGLRenderer({
 renderer.setPixelRatio( window.devicePixelRatio );
 renderer.setSize( window.innerWidth, window.innerHeight );
 camera.position.setZ(30)
+camera.position.setX(-3);
 
 // Renders everything in the scene
 renderer.render( scene, camera );
 
 // Creates an object
 const geometry = new THREE.TorusKnotGeometry( 10, 3, 100, 16, 3, 4 );
-const material = new THREE.MeshBasicMaterial({ color: 0xFF6347, wireframe: true });
+const material = new THREE.MeshStandardMaterial({ color: 0xFF6347 });
 const torusKnot = new THREE.Mesh( geometry, material );
 
 // Adds the new object to the scene
 scene.add(torusKnot);
 
-// Helper function to rerender the scene
+// Creates light
+const pointLight = new THREE.PointLight(0xffffff);
+pointLight.position.set( 5, 5, 5 );
+
+const ambientLight = new THREE.AmbientLight(0xffffff);
+scene.add(pointLight, ambientLight)
+
+// Helper function to rerender the scene for animations
 animate = () => {
   requestAnimationFrame( animate );
+
+  torusKnot.rotation.x += 0.01;
+  torusKnot.rotation.y += 0.005;
+  torusKnot.rotation.z += 0.01;
+
   rerender.render( scene, camera );
 }
 
