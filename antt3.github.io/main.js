@@ -17,5 +17,21 @@ renderer.setPixelRatio( window.devicePixelRatio );
 renderer.setSize( window.innerWidth, window.innerHeight );
 camera.position.setZ(30)
 
-// Render everything in the scene
+// Renders everything in the scene
 renderer.render( scene, camera );
+
+// Creates an object
+const geometry = new THREE.TorusKnotGeometry( 10, 3, 100, 16, 3, 4 );
+const material = new THREE.MeshBasicMaterial({ color: 0xFF6347, wireframe: true });
+const torusKnot = new THREE.Mesh( geometry, material );
+
+// Adds the new object to the scene
+scene.add(torusKnot);
+
+// Helper function to rerender the scene
+animate = () => {
+  requestAnimationFrame( animate );
+  rerender.render( scene, camera );
+}
+
+animate();
