@@ -26,7 +26,7 @@ renderer.render( scene, camera );
 // Creates a torus knot object
 const torusKnotGeometry = new THREE.TorusKnotGeometry( 10, 3, 100, 16, 3, 4 );
 const torusKnotMaterial = new THREE.MeshStandardMaterial({ color: 0xFF6347 });
-const torusKnot = new THREE.Mesh( geometry, material );
+const torusKnot = new THREE.Mesh( torusKnotGeometry, torusKnotMaterial );
 
 // Adds the new object to the scene
 scene.add(torusKnot);
@@ -49,10 +49,10 @@ const controls = new OrbitControls(camera, renderer.domElement);
 // Creates a star object
 const starGeometry = new THREE.SphereGeometry( 0.25, 24, 24 );
 const starMaterial = new THREE.MeshStandardMaterial({ color: 0xffffff });
-const star = new THREE.Mesh( geometry, material );
+const star = new THREE.Mesh( starGeometry, starMaterial );
 
 // Helper function to create a random star position
-addStar = () => {
+const addStar = () => {
   const [x, y, z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(100));
 
   star.position.set(x, y, z);
@@ -66,7 +66,7 @@ Array(200).fill().forEach(addStar)
 scene.add(star);
 
 // Helper function to rerender the scene for animations
-animate = () => {
+const animate = () => {
   requestAnimationFrame( animate );
 
   torusKnot.rotation.x += 0.01;
@@ -75,7 +75,7 @@ animate = () => {
 
   controls.update();
 
-  rerender.render( scene, camera );
+  renderer.render( scene, camera );
 }
 
 animate();
