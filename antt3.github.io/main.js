@@ -77,6 +77,15 @@ const me = new THREE.Mesh(
 
 scene.add(me);
 
+const venusTexture = new THREE.TextureLoader().load('venus.jpg');
+
+const venus = new THREE.Mesh(
+  new THREE.SphereGeometry(3, 32, 32),
+  new THREE.MeshStandardMaterial({ map: venusTexture })
+);
+
+scene.add(venus);
+
 // Helper function to rerender the scene for animations
 const animate = () => {
   requestAnimationFrame( animate );
