@@ -63,6 +63,9 @@ const addStar = () => {
 // Creates 200 randomly positioned stars
 Array(200).fill().forEach(addStar)
 
+const spaceTexture = new THREE.TextureLoader().load('space.jpg');
+scene.background = spaceTexture;
+
 // Helper function to rerender the scene for animations
 const animate = () => {
   requestAnimationFrame( animate );
