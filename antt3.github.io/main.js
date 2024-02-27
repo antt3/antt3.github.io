@@ -24,8 +24,8 @@ camera.position.setX(-3);
 renderer.render( scene, camera );
 
 // Creates a torus knot object
-const torusKnotGeometry = new THREE.TorusKnotGeometry( 10, 3, 100, 16, 3, 4 );
-const torusKnotMaterial = new THREE.MeshStandardMaterial({ color: 0xFF6347 });
+const torusKnotGeometry = new THREE.TorusKnotGeometry( 20, 3, 300, 20, 7, 3 );
+const torusKnotMaterial = new THREE.MeshStandardMaterial({ color: 0x111111 });
 const torusKnot = new THREE.Mesh( torusKnotGeometry, torusKnotMaterial );
 
 // Adds the new object to the scene
@@ -63,8 +63,19 @@ const addStar = () => {
 // Creates 200 randomly positioned stars
 Array(200).fill().forEach(addStar)
 
+// Creates background image
 const spaceTexture = new THREE.TextureLoader().load('space.jpg');
 scene.background = spaceTexture;
+
+// Creates Avatar cube
+const myTexture = new THREE.TextureLoader().load('profile_photo.jpg');
+
+const me = new THREE.Mesh(
+  new THREE.BoxGeometry(3, 3, 3),
+  new THREE.MeshBasicMaterial({ map: myTexture })
+);
+
+scene.add(me);
 
 // Helper function to rerender the scene for animations
 const animate = () => {
