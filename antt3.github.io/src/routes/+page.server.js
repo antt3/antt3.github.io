@@ -3,7 +3,21 @@ import { gql } from 'graphql-request'
 
 export const load = async () => {
 
-    const query = gql`
+    const authorsQuery = gql`
+        query GetAuthors {
+            authors {
+                name
+                intro
+                bio
+                slug
+                picture {
+                    url
+                }
+            }
+        }
+    `
+
+    const projectsQuery = gql`
         query GetProjects {
             projects {
                 name
@@ -18,9 +32,16 @@ export const load = async () => {
         }
     `
 
-    const { projects } = await client.request(query)
+    const [ authorReq, projectsReq ] = await Promise.all([
+        client.request(authorsQuery),
+        client.request(projectsQuery),
+    ])
+    
+    const { authors } = authorReq
+    const { projects } = projectsReq
 
     return {
-        projects
+        projects,
+        authors
     }
 }
