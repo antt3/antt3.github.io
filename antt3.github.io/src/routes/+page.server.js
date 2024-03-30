@@ -1,4 +1,4 @@
-import { client } from '../lib/graphql-client.js'
+import { client } from '$lib/graphql-client.js'
 import { gql } from 'graphql-request'
 
 export const load = async () => {
