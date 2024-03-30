@@ -7,7 +7,7 @@
 </script>
 
 <svelte:head>
-	<title>Portfolio | Blog</title>
+	<title>My Blog</title>
 </svelte:head>
 
 <h1 class="text-4xl mb-10 font-extrabold">Blog Posts</h1>

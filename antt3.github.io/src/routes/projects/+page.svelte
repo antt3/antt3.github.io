@@ -7,7 +7,7 @@
 </script>
 
 <svelte:head>
-	<title>My Portfolio projects</title>
+	<title>My Portfolio</title>
 </svelte:head>
 
 <h1 class="font-bold mb-20 text-center text-5xl">Recent Projects By Me</h1>
