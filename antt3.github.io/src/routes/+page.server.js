@@ -3,8 +3,6 @@ import { authorsQuery, projectsQuery } from '$lib/graphql/queries'
 
 export const load = async () => {
 
-    
-
     const [ authorReq, projectsReq ] = await Promise.all([
         client.request(authorsQuery),
         client.request(projectsQuery),
@@ -15,6 +13,6 @@ export const load = async () => {
 
     return {
         projects,
-        authors
+        authors,
     }
 }
