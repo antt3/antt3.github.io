@@ -7,6 +7,10 @@
     $: ({ projects, authors } = data)
 </script>
 
+<svelte:head>
+    <title>My Portfolio project</title>
+</svelte:head>
+
 <h1 class="font-bold text-center mb-20 text-5xl">
     Welcome To My Portfolio!
 </h1>
