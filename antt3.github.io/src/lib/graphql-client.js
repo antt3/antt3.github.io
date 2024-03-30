@@ -1,5 +1,4 @@
 import { GraphQLClient } from 'graphql-request'
+import { GRAPHQL_API } from '$env/static/private'
 
-const GRAPHQL_ENDPOINT = import.meta.env.VITE_GRAPH_API
-
-export const client = new GraphQLClient(GRAPHQL_ENDPOINT)
+export const client = new GraphQLClient(GRAPHQL_API)
