@@ -1,6 +1,6 @@
 <script>
 	import ProjectCard from '$lib/components/project-card.svelte';
-	import AuthorCard from '../lib/components/author-card.svelte';
+	import AuthorCard from '$lib/components/author-card.svelte';
 
 	export let data;
 	let { projects, authors } = data;
