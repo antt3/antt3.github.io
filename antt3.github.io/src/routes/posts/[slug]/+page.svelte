@@ -12,7 +12,7 @@
 	<title>My Blog | {title}</title>
 </svelte:head>
 
-<div class="sm:-mx-5 md:-mx-10 lg:-mx-20 xl:-mx-38 mb-5">
+<div class="xl:-mx-38 mb-5 sm:-mx-5 md:-mx-10 lg:-mx-20">
 	<img class="rounded-xl" src={coverImage.url} alt={`Cover image for ${title}`} />
 </div>
 
@@ -20,7 +20,7 @@
 	<h1>{title}</h1>
 </div>
 
-<p class="text-secondary text-xs tracking-widest font-semibold">
+<p class="text-secondary text-xs font-semibold tracking-widest">
 	{new Date(date).toDateString()}
 </p>
 

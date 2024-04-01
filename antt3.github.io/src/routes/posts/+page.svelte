@@ -1,5 +1,5 @@
 <script>
-	import PostCard from '$lib/components/post-card.svelte';
+	import Post from '$lib/components/cards/post.svelte';
 
 	export let data;
 	let { posts } = data;
@@ -13,5 +13,5 @@
 <h1 class="text-4xl mb-10 font-extrabold">Blog Posts</h1>
 
 {#each posts as { title, slug, content, coverImage, tags }}
-	<PostCard url={coverImage.url} {title} {content} {tags} {slug} />
+	<Post url={coverImage.url} {title} {content} {tags} {slug} />
 {/each}

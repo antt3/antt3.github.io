@@ -1,6 +1,6 @@
 <script>
-	import ProjectCard from '$lib/components/project-card.svelte';
-	import AuthorCard from '$lib/components/author-card.svelte';
+	import Project from '$lib/components/cards/project.svelte';
+	import Author from '$lib/components/cards/author.svelte';
 
 	export let data;
 	let { projects, authors } = data;
@@ -11,14 +11,14 @@
 	<title>My Home Page</title>
 </svelte:head>
 
-<h1 class="font-bold text-center mb-20 text-5xl">Welcome To My Portfolio!</h1>
+<h1 class="mb-20 text-center text-5xl font-bold">Welcome To My Portfolio!</h1>
 
 {#each authors as { name, intro, picture: { url } }}
-	<AuthorCard {name} {intro} {url} />
+	<Author {name} {intro} {url} />
 {/each}
 
-<div class="grid gap-10 md:grid-cols-4 md:px-10 lg:grid-cols-6 lg:-mx-52">
+<div class="grid gap-10 md:grid-cols-4 md:px-10 lg:-mx-52 lg:grid-cols-6">
 	{#each projects as { name, slug, description, image }}
-		<ProjectCard {name} {description} url={image[0].url} {slug} />
+		<Project {name} {description} url={image[0].url} {slug} />
 	{/each}
 </div>

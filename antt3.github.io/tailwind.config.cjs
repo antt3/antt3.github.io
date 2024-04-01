@@ -7,11 +7,11 @@ const config = {
 			typography: {
 				DEFAULT: {
 					css: {
-						maxWidth: null,
-					},
-				},
-			},
-		},
+						maxWidth: null
+					}
+				}
+			}
+		}
 	},
 
 	daisyui: {
@@ -44,14 +44,11 @@ const config = {
 			'synthwave',
 			'valentine',
 			'winter',
-			'wireframe',
-		],
+			'wireframe'
+		]
 	},
 
-	plugins: [
-		require('@tailwindcss/typography'),
-		require('daisyui'),
-	],
+	plugins: [require('@tailwindcss/typography'), require('daisyui')]
 };
 
 module.exports = config;

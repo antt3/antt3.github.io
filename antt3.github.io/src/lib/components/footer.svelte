@@ -4,7 +4,7 @@
 	import Facebook from './icons/facebook.svelte';
 </script>
 
-<footer class="footer footer-center p-10 bg-primary text-primary-content rounded">
+<footer class="footer footer-center bg-primary text-primary-content rounded p-10">
 	<nav class="grid grid-flow-col gap-4">
 		<a class="link link-hover" href="/projects">Projects</a>
 		<a class="link link-hover" href="/about">About Me</a>
