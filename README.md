@@ -1,6 +1,7 @@
 # antt3.github.io
-Portfolio Repo Version 2.5
 
+Portfolio Repo Version 3
 
 ## Live Site
-https://antt3.herokuapp.com/index.html
+
+https://antt3.vercel.app/
