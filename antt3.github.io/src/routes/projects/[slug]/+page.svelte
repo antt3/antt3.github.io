@@ -28,7 +28,7 @@
 
 <div class="prose prose-a:text-primary hover:prose-a:text-primary-focus mb-5 flex">
 	<a class="mr-5" href={project.demo}>Demo</a>
-	<a href={project.sourcCode}>Source Code</a>
+	<a href={project.sourceCode}>Source Code</a>
 </div>
 
 <article class="prose prose-xl">
