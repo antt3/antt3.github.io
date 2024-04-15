@@ -1,7 +1,6 @@
 <script>
-	import Twitter from './icons/twitter.svelte';
+	import LinkedIn from './icons/linkedin.svelte';
 	import GitHub from './icons/github.svelte';
-	import Facebook from './icons/facebook.svelte';
 </script>
 
 <footer class="footer footer-center bg-primary text-primary-content rounded p-10">
@@ -12,14 +11,11 @@
 	</nav>
 	<nav>
 		<div class="grid grid-flow-col gap-4">
-			<a href="https://twitter.com">
-				<Twitter />
+			<a href="https://www.linkedin.com/in/antt3/">
+				<LinkedIn />
 			</a>
-			<a href="https://twitter.com">
+			<a href="https://github.com/antt3">
 				<GitHub />
-			</a>
-			<a href="https://facebook.com">
-				<Facebook />
 			</a>
 		</div>
 	</nav>
