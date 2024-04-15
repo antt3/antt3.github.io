@@ -1,6 +1,6 @@
 <script>
 	import Twitter from './icons/twitter.svelte';
-	import Youtube from './icons/youtube.svelte';
+	import GitHub from './icons/github.svelte';
 	import Facebook from './icons/facebook.svelte';
 </script>
 
@@ -16,7 +16,7 @@
 				<Twitter />
 			</a>
 			<a href="https://twitter.com">
-				<Youtube />
+				<GitHub />
 			</a>
 			<a href="https://facebook.com">
 				<Facebook />
